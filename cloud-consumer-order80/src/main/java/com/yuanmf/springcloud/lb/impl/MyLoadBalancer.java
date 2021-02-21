@@ -14,9 +14,9 @@ public class MyLoadBalancer implements LoadBalancer {
 
     @Override
     public ServiceInstance instances(List<ServiceInstance> serviceInstances) {
+        int index = getAndIncrement()%serviceInstances.size();
 
-        
-        return null;
+        return serviceInstances.get(index);
     }
 
     private final int getAndIncrement() {
@@ -25,7 +25,7 @@ public class MyLoadBalancer implements LoadBalancer {
         do {
             current = this.atomicInteger.get();
             next = current >= Integer.MAX_VALUE ? 0 : current + 1;
-        } while (this.atomicInteger.compareAndSet(current,next));
+        } while (!this.atomicInteger.compareAndSet(current,next));
         System.out.println("**访问次数**next: "+next);
         return next;
     }
