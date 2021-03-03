@@ -24,11 +24,11 @@ spring:
             - After=2021-03-03T21:26:57.401+08:00[Asia/Shanghai]
 #            - Before=2022-03-03T21:26:57.401+08:00[Asia/Shanghai]
 #            - Between=2021-03-03T21:26:57.401+08:00[Asia/Shanghai],2022-03-03T21:26:57.401+08:00[Asia/Shanghai]
-            - Cookie=username,zzyy
-            - Header=X-Request-Id, \d+  # 请求头要有X-Request-Id属性并且值为整数的正则表达式   http://localhost:9527/payment/lb --cookie "username=zzyy" -H "X-Request-Id:1234"
-            - Host=**.atguigu.com     #curl http://localhost:9527/payment/lb --cookie "username=zzyy" -H "X-Request-Id:1234" -H "Host:www.atguigu.com"
-            - Method=GET  #curl http://localhost:9527/payment/lb --cookie "username=zzyy" -H "X-Request-Id:1234" -H "Host:www.atguigu.com" -X GET
-            - Query=foo, ba*  #curl http://localhost:9527/payment/lb?foo=bar --cookie "username=zzyy" -H "X-Request-Id:1234" -H "Host:www.atguigu.com" -X GET   .代表一个占位  #匹配方式正则匹配
+#            - Cookie=username,zzyy
+#            - Header=X-Request-Id, \d+  # 请求头要有X-Request-Id属性并且值为整数的正则表达式   http://localhost:9527/payment/lb --cookie "username=zzyy" -H "X-Request-Id:1234"
+#            - Host=**.atguigu.com     #curl http://localhost:9527/payment/lb --cookie "username=zzyy" -H "X-Request-Id:1234" -H "Host:www.atguigu.com"
+#            - Method=GET  #curl http://localhost:9527/payment/lb --cookie "username=zzyy" -H "X-Request-Id:1234" -H "Host:www.atguigu.com" -X GET
+#            - Query=foo, ba*  #curl http://localhost:9527/payment/lb?foo=bar --cookie "username=zzyy" -H "X-Request-Id:1234" -H "Host:www.atguigu.com" -X GET   .代表一个占位  #匹配方式正则匹配
 
 eureka:
   instance:
